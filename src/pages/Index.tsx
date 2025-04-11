@@ -16,12 +16,12 @@ const Index = () => {
   }, [dispatch]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow">
+    <div className="min-h-screen bg-slate-900 text-slate-100">
+      <header className="bg-slate-800 shadow-lg shadow-slate-900/50 sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center">
-            <ShoppingBag className="h-6 w-6 text-blue-600 mr-2" />
-            <h1 className="text-xl font-bold text-gray-900">React Shop</h1>
+            <ShoppingBag className="h-6 w-6 text-blue-400 mr-2" />
+            <h1 className="text-xl font-bold text-white">Midnight Market</h1>
           </div>
           <ShoppingCart />
         </div>
@@ -30,7 +30,7 @@ const Index = () => {
       <main className="container mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-1/4">
-            <div className="lg:sticky lg:top-4">
+            <div className="lg:sticky lg:top-24 bg-slate-800 p-5 rounded-lg shadow-lg">
               <ProductFilters />
             </div>
           </div>
@@ -40,10 +40,10 @@ const Index = () => {
         </div>
       </main>
 
-      <footer className="bg-white shadow-inner mt-16">
+      <footer className="bg-slate-800 shadow-inner mt-16">
         <div className="container mx-auto px-4 py-6">
-          <p className="text-center text-gray-500 text-sm">
-            © 2025 React Shop. All rights reserved.
+          <p className="text-center text-slate-400 text-sm">
+            © 2025 Midnight Market. All rights reserved.
           </p>
         </div>
       </footer>

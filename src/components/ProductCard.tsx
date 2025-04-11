@@ -26,55 +26,55 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             className={`${
               star <= Math.round(rating)
                 ? "text-yellow-400 fill-yellow-400"
-                : "text-gray-300"
+                : "text-slate-600"
             }`}
           />
         ))}
-        <span className="ml-1 text-sm text-gray-600">{rating.toFixed(1)}</span>
+        <span className="ml-1 text-sm text-slate-400">{rating.toFixed(1)}</span>
       </div>
     );
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
-      <div className="relative h-48 overflow-hidden bg-gray-100">
+    <div className="bg-slate-800 rounded-lg shadow-lg overflow-hidden hover:shadow-blue-900/30 hover:shadow-xl transition-all duration-300 flex flex-col border border-slate-700 group">
+      <div className="relative h-60 overflow-hidden bg-slate-900">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
-        <Badge className="absolute top-2 right-2">{product.category}</Badge>
+        <Badge className="absolute top-2 right-2 bg-blue-600 text-white">{product.category}</Badge>
       </div>
-      <div className="p-4 flex-grow flex flex-col">
-        <h3 className="font-medium text-gray-900 text-lg mb-1">{product.name}</h3>
-        <p className="text-gray-500 text-sm mb-2 line-clamp-2 flex-grow">{product.description}</p>
+      <div className="p-5 flex-grow flex flex-col">
+        <h3 className="font-medium text-white text-lg mb-1">{product.name}</h3>
+        <p className="text-slate-400 text-sm mb-3 line-clamp-2 flex-grow">{product.description}</p>
         <div className="flex justify-between items-center mt-2">
-          <span className="text-gray-900 font-bold">${product.price.toFixed(2)}</span>
+          <span className="text-blue-400 font-bold">${product.price.toFixed(2)}</span>
           {renderRating(product.rating)}
         </div>
         <div className="mt-4">
           {!isInCart ? (
             <Button 
               onClick={() => addToCart(product.id)} 
-              className="w-full bg-blue-600 hover:bg-blue-700"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white"
             >
               <ShoppingCart className="mr-2 h-4 w-4" /> Add to Cart
             </Button>
           ) : (
-            <div className="flex items-center justify-between border rounded-md p-1">
+            <div className="flex items-center justify-between border border-slate-700 rounded-md p-1 bg-slate-900">
               <Button
                 variant="outline"
                 size="icon"
-                className="h-8 w-8"
+                className="h-8 w-8 border-slate-700 text-slate-200 hover:bg-slate-700"
                 onClick={() => updateQuantity(product.id, (cartItem?.quantity || 1) - 1)}
               >
                 <Minus className="h-3 w-3" />
               </Button>
-              <span className="mx-2 font-medium">{cartItem?.quantity}</span>
+              <span className="mx-2 font-medium text-white">{cartItem?.quantity}</span>
               <Button
                 variant="outline"
                 size="icon"
-                className="h-8 w-8"
+                className="h-8 w-8 border-slate-700 text-slate-200 hover:bg-slate-700"
                 onClick={() => updateQuantity(product.id, (cartItem?.quantity || 0) + 1)}
               >
                 <Plus className="h-3 w-3" />

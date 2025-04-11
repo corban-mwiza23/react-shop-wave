@@ -27,5 +27,5 @@ const App = () => (
     </TooltipProvider>
   </QueryClientProvider>
 );
-
+//This is the App.jsx it conntains All structure components
 export default App;
